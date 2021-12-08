@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import AppLink from '../../../components/common/AppLink'
@@ -37,31 +37,30 @@ const CharactersListPage: React.FC = () => {
           </AppLink>
           <section className="flex-1 relative z-10 p-2">
             <motion.div
-              initial="pageInitial"
-              animate="pageAnimate"
-              style={{ position: 'relative' }}
+              initial="initial"
+              animate="animate"
               key={`${router.route}-${page}`}
               variants={{
-                pageInitial: {
+                initial: {
                   opacity: 0,
-                  top: 20,
-                  scale: 0.96
+                  y: -10
                 },
-                pageAnimate: {
+                animate: {
                   opacity: 1,
-                  top: 0,
-                  scale: 1
+                  y: 0
                 }
               }}
             >
               <CharactersGridList characters={pagination.collection} />
             </motion.div>
           </section>
-          <AppLink href={`/characters/${page + 1}`}>
-            <div className="w-10 h-full text-2xl py-8 cursor-pointer">
-              <CaretRight />
-            </div>
-          </AppLink>
+          {!pagination.isLastPage && (
+            <AppLink href={`/characters/${page + 1}`}>
+              <div className="w-10 h-full text-2xl py-8 cursor-pointer">
+                <CaretRight />
+              </div>
+            </AppLink>
+          )}
         </div>
       </DefaultPage>
 
