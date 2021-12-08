@@ -12,6 +12,7 @@
 /.next/
 /out/
 
+/public/css
 # production
 /build
 
