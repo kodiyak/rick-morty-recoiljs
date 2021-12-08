@@ -1,9 +1,14 @@
+import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import RickMortyRepository from '../../../services/repositories/RickMortyRepository'
 import { getAllCharacters } from '../../../services/rxjs/getAllCharacters'
 import { useCharacters } from '../../../store/characters'
 
-const PreloadScreen: React.FC = ({ children }) => {
+interface PreloadScreenProps {
+  routeKey: string
+}
+
+const PreloadScreen: React.FC<PreloadScreenProps> = ({ children, routeKey }) => {
   const [isLoading, setLoading] = useState(true)
   const [, setCharacters] = useCharacters()
 
@@ -28,7 +33,25 @@ const PreloadScreen: React.FC = ({ children }) => {
     })
   }, [])
 
-  return <div className="w-full h-screen bg-gray-900">{!isLoading && children}</div>
+  return (
+    <div className="w-full h-screen bg-gray-900">
+      <motion.div
+        initial="pageInitial"
+        animate="pageAnimate"
+        key={routeKey}
+        variants={{
+          pageInitial: {
+            opacity: 0
+          },
+          pageAnimate: {
+            opacity: 1
+          }
+        }}
+      >
+        {!isLoading && children}
+      </motion.div>
+    </div>
+  )
 }
 
 export default PreloadScreen

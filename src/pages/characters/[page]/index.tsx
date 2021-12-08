@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import AppLink from '../../../components/common/AppLink'
@@ -26,7 +27,6 @@ const CharactersListPage: React.FC = () => {
   return (
     <div>
       <DefaultHead />
-
       <DefaultPage>
         <PageTitle title="Rick and Morty" description={'See All Characters'} />
         <div className="w-full flex flex-row items-center">
@@ -36,7 +36,26 @@ const CharactersListPage: React.FC = () => {
             </div>
           </AppLink>
           <section className="flex-1 relative z-10 p-2">
-            <CharactersGridList characters={pagination.collection} />
+            <motion.div
+              initial="pageInitial"
+              animate="pageAnimate"
+              style={{ position: 'relative' }}
+              key={`${router.route}-${page}`}
+              variants={{
+                pageInitial: {
+                  opacity: 0,
+                  top: 20,
+                  scale: 0.96
+                },
+                pageAnimate: {
+                  opacity: 1,
+                  top: 0,
+                  scale: 1
+                }
+              }}
+            >
+              <CharactersGridList characters={pagination.collection} />
+            </motion.div>
           </section>
           <AppLink href={`/characters/${page + 1}`}>
             <div className="w-10 h-full text-2xl py-8 cursor-pointer">
