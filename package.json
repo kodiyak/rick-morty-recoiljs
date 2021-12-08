@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "tailwind -o public/css/app.css",
+    "prebuild": "tailwind -o styles/app.css",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
