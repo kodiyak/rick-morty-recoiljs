@@ -8,9 +8,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "collect.js": "^4.29.3",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-use-image": "^0.2.3",
     "recoil": "^0.5.2",
     "rickmortyapi": "^1.0.0",
     "rxjs": "^7.4.0"

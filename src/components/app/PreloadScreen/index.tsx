@@ -8,16 +8,17 @@ const PreloadScreen: React.FC = ({ children }) => {
   const [, setCharacters] = useCharacters()
 
   async function load() {
-    // const observer = getAllCharacters()
-    // observer.subscribe((characters) => {
-    //   setCharacters((oldCharacters) => [...oldCharacters, ...characters])
-    // })
-    RickMortyRepository.getCharacters().then((res) => {
-      const { results } = res
-      if (results !== undefined) {
-        setCharacters(() => results)
-      }
+    const observer = getAllCharacters()
+    observer.subscribe((characters) => {
+      setCharacters((oldCharacters) => [...oldCharacters, ...characters])
     })
+
+    // RickMortyRepository.getCharacters().then((res) => {
+    //   const { results } = res
+    //   if (results !== undefined) {
+    //     setCharacters(() => results)
+    //   }
+    // })
   }
 
   useEffect(() => {

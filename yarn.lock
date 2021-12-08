@@ -804,6 +804,11 @@ classnames@2.2.6:
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.2.6.tgz"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
+collect.js@^4.29.3:
+  version "4.29.3"
+  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.29.3.tgz#4d8aeb2970d0d12f6bc0923c9a2a172d51ec25f8"
+  integrity sha512-/6idZ7r3B25Q4cForbiHJ7+aqupcgMEtrKRn9D3viCbLw+YuNFjd23HwDH89Y2cU4jlhkwksD80nZFKtNE25Gw==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
@@ -2890,6 +2895,11 @@ react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
+
+react-use-image@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-use-image/-/react-use-image-0.2.3.tgz#ec270a58063cf91535be131b499ba0ac560dd223"
+  integrity sha512-PWWvj3sZkcB1ydig3kSym+JHK7zOMXh0W+epc5QCxzVBTnMFVXUg3zGH+19rWVO/qD2rTy7gMZuk/WGmE75eeA==
 
 react@17.0.2:
   version "17.0.2"
